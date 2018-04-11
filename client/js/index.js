@@ -1,3 +1,4 @@
+
 var vm = new Vue({
     el: '#app',
     data: {
@@ -61,6 +62,9 @@ var vm = new Vue({
             stock: 5
         }],
         carts: [],
+        email: '',
+        password: '',
+        
     },
     methods: {
         addToCart1: function(item){
@@ -150,11 +154,40 @@ var vm = new Vue({
             this.last_products[item.id-1].stock += item.quantity
 
             this.carts.splice(index, 1)
-        }
+        },
+        loginUser: function(){
+            axios.post('http://localhost:4000/users/login', {
+                email: this.getEmail,
+                password: this.password
+            })
+            .then((response) => {
+                if(response.status == 200){
+                    
+                    localStorage.setItem('userId', response.data.data.id)
+                    localStorage.setItem('token', response.data.data.token)
+                    localStorage.setItem('email', response.data.data.email)
+                    localStorage.setItem('role', response.data.data.role) 
+                    localStorage.setItem('name', response.data.data.name)                                                               
+                    location.reload()
+                    alert('Login Success')
+                    window.location.href='home.html'
+                } else {
+                    alert('Login Failed, please check your username or password')
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        },
         
 
     }, 
     computed: {
-        
+        getEmail: function(){
+            return this.email
+        },
+        getPassword: function(){
+            return this.password
+        }
     }
 })
