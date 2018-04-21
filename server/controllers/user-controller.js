@@ -6,6 +6,7 @@ const saltRounds = 10
 
 module.exports = {
     register: (req, res) => {
+        console.log(req.body)
         let addUser = new User({
             first_name: req.body.first_name,
             last_name: req.body.last_name,
@@ -17,9 +18,17 @@ module.exports = {
         })
         addUser.save()
         .then(dataUser => {
+            let token = jwt.sign({userId: dataUser._id}, process.env.SECRET)
             res.status(200).json({
                 message: 'Register User Success',
-                data: dataUser
+                data: {
+                    id: dataUser._id,
+                    name: dataUser.first_name+' '+dataUser.last_name,
+                    email: dataUser.email,
+                    address: dataUser.address,
+                    role: dataUser.role,
+                    token: token
+                }
             })
         })
         .catch(err => {

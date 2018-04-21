@@ -1,4 +1,4 @@
-Vue.component('component-footer', {
+Vue.component('comp-footer', {
     template: `
     <footer class="text-light">
         <div class="container">
@@ -6,7 +6,7 @@ Vue.component('component-footer', {
                 <div class="col-md-3 col-lg4 col-xl-3">
                     <h5>About</h5>
                     <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
-                    <p class="mb-0">E-Commerce adalah penyebaran, penjualan, pembelian, pemasaran barang dan jasa yang mengandalkan sistem elektronik, seperti internet, televisi, atau jaringan komputer lainnya.</p>
+                    <p class="mb-0">E-commerce is the activity of buying or selling of products and services online or over the internet. Electronic commerce draws on technologies such as mobile commerce, electronic funds transfer, supply chain management, Internet marketing, online transaction processing, electronic data interchange (EDI), inventory management systems, and automated data collection systems..</p>
                 </div>
 
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto">
@@ -24,7 +24,7 @@ Vue.component('component-footer', {
                     <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
                     <ul class="list-unstyled">
                         <li><i class="fa fa-home mr-2"></i> Agung Prabowo</li>
-                        <li><i class="fa fa-envelope mr-2"></i> agungp@pindad.com</li>
+                        <li><i class="fa fa-envelope mr-2"></i> agung.caproex@gmail.com</li>
                         <li><i class="fa fa-phone mr-2"></i> +62878 2217 1172</li>
                     </ul>
                 </div>
@@ -36,5 +36,6 @@ Vue.component('component-footer', {
                 </div>
             </div>
         </div>
-    </footer>`
+    </footer>
+    `
 })
