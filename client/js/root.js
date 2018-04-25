@@ -88,7 +88,7 @@ var vm = new Vue({
     },
 
     created: function(){
-        axios.get('http://localhost:4000/items/list', {
+        axios.get('http://ec2-52-70-89-219.compute-1.amazonaws.com:3000/items/list', {
             token: this.dataUser.token
         })
         .then(response => {

@@ -55,7 +55,7 @@ Vue.component('comp-register',{
 
     methods: {
         registerUser: function(){
-            axios.post('http://localhost:4000/users/register', {
+            axios.post('http://ec2-52-70-89-219.compute-1.amazonaws.com:3000/users/register', {
                     email: this.email,
                     password: this.password,
                     first_name: this.first_name,
@@ -72,7 +72,7 @@ Vue.component('comp-register',{
                         localStorage.setItem('role', response.data.data.role)                                                        
                         location.reload()
                         alert('Sign Up Success, Happy Shopping !')
-                        window.location.href='home.html'
+                        window.location.href='index.html'
                     } else {
                         alert('Login Failed, please check your username or password')
                     }
