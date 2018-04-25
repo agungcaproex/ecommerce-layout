@@ -6,7 +6,7 @@ Vue.component('comp-footer', {
                 <div class="col-md-3 col-lg4 col-xl-3">
                     <h5>About</h5>
                     <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
-                    <p class="mb-0">E-commerce is the activity of buying or selling of products and services online or over the internet. Electronic commerce draws on technologies such as mobile commerce, electronic funds transfer, supply chain management, Internet marketing, online transaction processing, electronic data interchange (EDI), inventory management systems, and automated data collection systems..</p>
+                    <p class="mb-0">E-commerce is the activity of buying or selling of products and services online or over the internet..</p>
                 </div>
 
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto">

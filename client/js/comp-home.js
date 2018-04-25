@@ -70,7 +70,7 @@ Vue.component('comp-home', {
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-sm"  v-for="list_product in products">
+                        <div class="col-sm"  v-for="list_product in products.slice(0,4)">
                             <div class="card">
                                 <img class="card-img-top" v-bind:src="list_product.picture" :alt=list_product.name>
                                 <div class="card-body">
@@ -94,6 +94,42 @@ Vue.component('comp-home', {
             </div>
         </div>
     </div>
+
+    <div class="container mt-3 mb-4">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-uppercase">
+                        <i class="fa fa-trophy"></i> Best Products
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm"  v-for="list_product in products" v-if="list_product.category == 'Best'">
+                            <div class="card">
+                                <img class="card-img-top" v-bind:src="list_product.picture" :alt="list_product.name">
+                                <div class="card-body">
+                                    <h4 class="card-title"><a href="product-macbook.html" title="View Product">Product Title</a></h4>
+                                    <p class="card-text">{{list_product.title}}</p>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="btn btn-danger btn-block">$ {{list_product.price}}.00</p>
+                                        </div>
+                                        <div class="col">
+                                            <button type="button" class="btn btn-success btn-block" v-on:click="addToCart(list_product)">
+                                                Add To Cart
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Cart Modal -->
     <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
